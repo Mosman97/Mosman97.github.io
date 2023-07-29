@@ -6,7 +6,7 @@
   <title>ITSec-Bock Dienstleistungen</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    /* Farbliche Anpassungen (Beispiel) */
+    /* Farbliche Anpassungen */
     body {
       background-color: #f8f8f8;
     }
@@ -29,6 +29,13 @@
     .footer a:hover {
       color: #d9d9d9;
     }
+    /* Farbe für den Einführungstext */
+    .intro-text {
+      background-color: #dff0d8; /* Grün, ähnlich wie Kaspersky */
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 <body>
@@ -46,13 +53,22 @@
     </div>
   </nav>
 
+    <div class="intro-text">
+      <h1>Willkommen bei ITSec-Bock Dienstleistungen</h1>
+      <p>
+       Handeln Sie proaktiv anstatt reaktiv zu sein. Ist Ihr Unternehmen ausreichend geschützt? Sind Ihre Daten vor unberechtigtem Zugriff hinreichend gesichert? Der steigende Bedarf nach mehr Funktionalität und Mobilität erfordert immer höhere Sicherheitsstandards für die IT-Infrastruktur eines jeden Unternehmens.
+      </p>
+    </div>
+
   <!-- Main Content -->
   <div class="container mt-4">
     <section id="kaspersky">
       <h2>Kaspersky Endpoint Security for Business</h2>
-      <img src="kaspersky_image.jpg" alt="Kaspersky Endpoint Security">
       <p>
         Kaspersky Endpoint Security for Business bietet umfassenden Schutz vor vielfältigen Bedrohungen wie Viren, Malware, Ransomware und mehr. Es schützt sowohl einzelne Endgeräte als auch das gesamte Netzwerk vor Cyberangriffen und sorgt für eine sichere Arbeitsumgebung.
+      </p>
+      <p>
+        Wir bieten umfassende Beratung und erstellen maßgeschneiderte Konzepte, die auf Ihre spezifischen Sicherheitsanforderungen zugeschnitten sind.
       </p>
     </section>
 
@@ -60,7 +76,7 @@
 
     <section id="vulnerability">
       <h2>Vulnerability Scans</h2>
-      <img src="scan.jpg" alt="Vulnerability Scans">
+      <img src="scan.jpg" alt="Vulnerability Scans" class="img-fluid">
       <p>
         Vulnerability Scans sind eine wichtige Maßnahme, um potenzielle Schwachstellen in Ihrem IT-System zu erkennen. Durch regelmäßige Scans können Sicherheitslücken identifiziert und behoben werden, um die Angriffsfläche für Hacker zu reduzieren und Ihre Daten zu schützen.
       </p>
@@ -70,7 +86,6 @@
 
     <section id="hardening">
       <h2>Windows Hardening</h2>
-      <img src="hardening_image.jpg" alt="Windows Hardening">
       <p>
         Windows Hardening bezeichnet das gezielte Absichern von Windows-Betriebssystemen, um unbefugte Zugriffe und unautorisierte Manipulationen zu verhindern. Durch die Anwendung von Best Practices und Sicherheitsrichtlinien wird die Sicherheit Ihrer Windows-Umgebung verbessert.
       </p>
@@ -80,7 +95,6 @@
 
     <section id="office365">
       <h2>Kaspersky Security for Microsoft Office 365</h2>
-      <img src="office365_image.jpg" alt="Kaspersky Security for Microsoft Office 365">
       <p>
         Kaspersky Security for Microsoft Office 365 erweitert den Schutz Ihrer Office 365 Umgebung. Es bietet zusätzliche Sicherheitsebenen gegen Bedrohungen in E-Mails, Anhängen und Links, um Ihre Geschäftskommunikation vor Malware und Phishing-Angriffen zu schützen.
       </p>
