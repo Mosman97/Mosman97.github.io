@@ -3,33 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IT Security Portfolio</title>
+  <title>ITSec-Bock Dienstleistungen</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Farbliche Anpassungen (Beispiel) */
+    body {
+      background-color: #f8f8f8;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar-brand, .navbar-nav .nav-link {
+      color: #ffffff;
+    }
+    .navbar-brand:hover, .navbar-nav .nav-link:hover {
+      color: #d9d9d9;
+    }
+    .footer {
+      background-color: #343a40;
+      color: #ffffff;
+    }
+    .footer a {
+      color: #ffffff;
+    }
+    .footer a:hover {
+      color: #d9d9d9;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">IT Security Portfolio</a>
+      <a class="navbar-brand" href="#">ITSec-Bock Dienstleistungen</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#kaspersky">Kaspersky Endpoint Security</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#vulnerability">Vulnerability Scans</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#hardening">Windows Hardening</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#office365">Kaspersky Security for Microsoft Office 365</a>
-          </li>
-        </ul>
+        <!-- Produkte aus Navbar entfernt -->
       </div>
     </div>
   </nav>
@@ -38,6 +50,7 @@
   <div class="container mt-4">
     <section id="kaspersky">
       <h2>Kaspersky Endpoint Security for Business</h2>
+      <img src="kaspersky_image.jpg" alt="Kaspersky Endpoint Security">
       <p>
         Kaspersky Endpoint Security for Business bietet umfassenden Schutz vor vielfältigen Bedrohungen wie Viren, Malware, Ransomware und mehr. Es schützt sowohl einzelne Endgeräte als auch das gesamte Netzwerk vor Cyberangriffen und sorgt für eine sichere Arbeitsumgebung.
       </p>
@@ -47,6 +60,7 @@
 
     <section id="vulnerability">
       <h2>Vulnerability Scans</h2>
+      <img src="vulnerability_image.jpg" alt="Vulnerability Scans">
       <p>
         Vulnerability Scans sind eine wichtige Maßnahme, um potenzielle Schwachstellen in Ihrem IT-System zu erkennen. Durch regelmäßige Scans können Sicherheitslücken identifiziert und behoben werden, um die Angriffsfläche für Hacker zu reduzieren und Ihre Daten zu schützen.
       </p>
@@ -56,6 +70,7 @@
 
     <section id="hardening">
       <h2>Windows Hardening</h2>
+      <img src="hardening_image.jpg" alt="Windows Hardening">
       <p>
         Windows Hardening bezeichnet das gezielte Absichern von Windows-Betriebssystemen, um unbefugte Zugriffe und unautorisierte Manipulationen zu verhindern. Durch die Anwendung von Best Practices und Sicherheitsrichtlinien wird die Sicherheit Ihrer Windows-Umgebung verbessert.
       </p>
@@ -65,6 +80,7 @@
 
     <section id="office365">
       <h2>Kaspersky Security for Microsoft Office 365</h2>
+      <img src="office365_image.jpg" alt="Kaspersky Security for Microsoft Office 365">
       <p>
         Kaspersky Security for Microsoft Office 365 erweitert den Schutz Ihrer Office 365 Umgebung. Es bietet zusätzliche Sicherheitsebenen gegen Bedrohungen in E-Mails, Anhängen und Links, um Ihre Geschäftskommunikation vor Malware und Phishing-Angriffen zu schützen.
       </p>
@@ -73,7 +89,9 @@
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2023 IT Security Portfolio. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2023 ITSec-Bock Dienstleistungen. All rights reserved. | <a href="impressum.html">Impressum</a></p>
+    </div>
   </footer>
 
   <!-- Bootstrap JS and jQuery -->
