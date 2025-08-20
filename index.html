@@ -1,135 +1,286 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ITSec-Bock Dienstleistungen</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyber‑Risikocheck Zwickau (DIN SPEC 27076) – vor Ort | 1.000 €</title>
+  <meta name="description" content="Vor-Ort-Cyber-Risikocheck nach DIN SPEC 27076 in Zwickau. Top‑10‑Maßnahmen, Quick‑Wins in 1 Tag. Fixpreis 1.000 €. Termin fürs Kurzgespräch sichern." />
+  <link rel="icon" href="data:,"/>
   <style>
-    /* Farbliche Anpassungen */
-    body {
-      background-color: #f8f8f8;
+    :root {
+      --bg: #0b1020;
+      --card: #0f172a;
+      --text: #e5e7eb;
+      --muted: #93a4bc;
+      --accent: #2563eb; /* blau */
+      --accent-2: #22c55e; /* grün */
+      --ring: rgba(37, 99, 235, 0.35);
+      --maxw: 1100px;
     }
-    .navbar {
-      background-color: #343a40;
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#ffffff; --card:#f8fafc; --text:#0b1020; --muted:#5b6878; --ring: rgba(37,99,235,.25);}  
+      header.nav { background: rgba(255,255,255,.7); backdrop-filter: blur(10px); }
     }
-    .navbar-brand, .navbar-nav .nav-link {
-      color: #ffffff;
-    }
-    .navbar-brand:hover, .navbar-nav .nav-link:hover {
-      color: #d9d9d9;
-    }
-    .footer {
-      background-color: #343a40;
-      color: #ffffff;
-    }
-    .footer a {
-      color: #ffffff;
-    }
-    .footer a:hover {
-      color: #d9d9d9;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; background:var(--bg); color:var(--text); line-height:1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.2rem; border-radius: 999px; background: var(--accent); color:white; font-weight:600; border:0; box-shadow: 0 6px 20px rgba(37,99,235,.35); transition: transform .12s ease, box-shadow .12s ease; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 25px rgba(37,99,235,.45); text-decoration:none; }
+    .btn.secondary { background: transparent; color: var(--text); border:1px solid rgba(148,163,184,.35); box-shadow:none; }
+    .pill { display:inline-flex; gap:.5rem; align-items:center; padding:.35rem .7rem; border-radius:999px; background: rgba(148,163,184,.15); color: var(--muted); font-weight:600; font-size:.85rem; }
+
+    header.nav { position:sticky; top:0; z-index:50; border-bottom:1px solid rgba(148,163,184,.15); background: rgba(15,23,42,.7); backdrop-filter: blur(10px); }
+    header .inner { display:flex; align-items:center; justify-content:space-between; min-height:64px; }
+    header nav a { margin-left:1rem; font-weight:600; color:var(--text); opacity:.85; }
+    header nav a:hover { opacity:1; }
+
+    .hero { position: relative; overflow: clip; }
+    .hero .grid { display:grid; grid-template-columns: 1.1fr .9fr; gap:40px; align-items:center; padding: 62px 0 42px; }
+    @media (max-width: 900px){ .hero .grid { grid-template-columns: 1fr; padding: 48px 0 24px; } }
+    .hero h1 { font-size: clamp(2.1rem, 2.5vw + 1.2rem, 3.25rem); line-height:1.15; margin:0 0 14px; letter-spacing:-.02em; }
+    .hero p.lead { font-size: clamp(1.05rem, .6vw + .9rem, 1.25rem); color: var(--muted); margin: 0 0 26px; }
+    .badge-row { display:flex; flex-wrap: wrap; gap:.5rem; margin-top:12px; }
+
+    .card { background: var(--card); border:1px solid rgba(148,163,184,.15); border-radius:20px; padding:22px; }
+
+    .features { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+    @media (max-width: 900px){ .features { grid-template-columns: 1fr; } }
+    .feature h3 { margin:.2rem 0 .2rem; font-size:1.05rem; }
+    .feature p { color: var(--muted); margin:0; }
+    .icon { width:22px; height:22px; display:inline-block; }
+
+    section { padding: 56px 0; }
+    section h2 { font-size: clamp(1.5rem, .8vw + 1.2rem, 2rem); margin:0 0 18px; }
+    .kicker { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-weight:700; font-size:.75rem; }
+
+    .two-col { display:grid; grid-template-columns: 1fr 1fr; gap:26px; }
+    @media (max-width: 900px){ .two-col { grid-template-columns: 1fr; } }
+
+    .list { display:grid; gap:10px; }
+    .list li { display:flex; gap:.7rem; align-items:flex-start; }
+    .check { flex:0 0 auto; margin-top:.2rem; }
+
+    .price { display:grid; grid-template-columns: 1.2fr .8fr; gap:22px; align-items:stretch; }
+    @media (max-width: 900px){ .price { grid-template-columns: 1fr; } }
+    .price .tag { font-size:2.4rem; font-weight:800; letter-spacing:-.02em; }
+
+    details.faq { border:1px solid rgba(148,163,184,.2); border-radius:16px; padding:16px 18px; background: var(--card); }
+    details.faq + details.faq { margin-top:10px; }
+    details.faq summary { cursor: pointer; font-weight:700; }
+    details.faq p { color: var(--muted); margin:.6rem 0 0; }
+
+    footer { padding: 36px 0 60px; color: var(--muted); border-top:1px solid rgba(148,163,184,.15); }
+
+    /* Print basics */
+    @media print { header.nav, .btn, .pill { display:none !important; } body { color:#000; } .card{border:1px solid #ddd;} a{color:#000; text-decoration:underline;} }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Puls Security – Cyber‑Risikocheck (DIN 27076)",
+    "areaServed":"Landkreis Zwickau & Umland",
+    "address": {"@type":"PostalAddress", "addressLocality":"Zwickau", "addressCountry":"DE"},
+    "email":"eric.bock@puls-security.de",
+    "priceRange":"€€",
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
+  <a href="#kontakt" class="pill" style="position:fixed; right:14px; bottom:14px; z-index:60; box-shadow:0 10px 25px rgba(0,0,0,.25)">Jetzt Kurzgespräch buchen</a>
 
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">ITSec-Bock Dienstleistungen</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+  <!-- NAV -->
+  <header class="nav" aria-label="Hauptnavigation">
+    <div class="container inner">
+      <div style="display:flex; align-items:center; gap:.7rem;">
+        <div class="pill" aria-hidden="true">DIN SPEC 27076</div>
+        <strong>Puls Security</strong>
       </div>
+      <nav>
+        <a href="#angebot">Angebot</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#preis">Preis</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt" class="btn" style="margin-left:1rem;">Termin sichern</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-    <div class="container mt-4">
-      <h1>Willkommen bei ITSec-Bock Dienstleistungen</h1>
-      <p>
-       Handeln Sie proaktiv anstatt reaktiv zu sein. Ist Ihr Unternehmen ausreichend geschützt? Sind Ihre Daten vor unberechtigtem Zugriff hinreichend gesichert? Der steigende Bedarf nach mehr Funktionalität und Mobilität erfordert immer höhere Sicherheitsstandards für die IT-Infrastruktur eines jeden Unternehmens.
-      </p>
-      <p>
-        Wir bieten umfassende Beratung und erstellen maßgeschneiderte Konzepte, die auf Ihre spezifischen Sicherheitsanforderungen zugeschnitten sind.
-      </p>
-    </div>
-
-  <div class="container mt-4">
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-6">
-              <h3 class="card-title">Managed - Services</h3>
-              <p class="card-text">
-                Unsere Managed Services bieten Ihnen wiederkehrende IT-Dienstleistungen, die wir für Sie übernehmen. Dazu gehört unter anderem die regelmäßige Kontrolle Ihrer IT-Infrastruktur, um Sicherheitslücken rechtzeitig zu erkennen und zu beheben. Mit unseren Managed Services sind Ihre monatlichen Kosten kalkulierbar und Sie minimieren das Risiko deutlich höherer Ausgaben bei einem Totalausfall.
-              </p>
-            </div>
-            <div class="col-md-6">
-              <img src="msp.png" class="img-fluid">
-            </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container grid">
+      <div class="grid">
+        <div>
+          <div class="pill">Vor Ort • Zwickau • Keine Remote‑Checks</div>
+          <h1>Cyber‑Risikocheck nach DIN SPEC 27076 – vor Ort in Zwickau.</h1>
+          <p class="lead">Klare Top‑10‑Maßnahmen statt Papierfriedhof. Fixpreis <strong>1.000 €</strong>. In 1–2 Stunden erfassen wir Ihren Status und liefern einen umsetzbaren Plan – häufig mit Quick‑Wins in <strong>1 Tag</strong>.</p>
+          <div style="display:flex; gap:.6rem; flex-wrap:wrap;">
+            <a class="btn" href="#kontakt" aria-label="Termin für Kurzgespräch sichern">Termin für Kurzgespräch sichern</a>
+            <a class="btn secondary" href="#preis">Preis & Optionen</a>
+          </div>
+          <div class="badge-row">
+            <span class="pill">DIN‑basiert</span>
+            <span class="pill">Top‑10‑Maßnahmen</span>
+            <span class="pill">Quick‑Wins</span>
+            <span class="pill">Live‑Awareness</span>
           </div>
         </div>
       </div>
-     </div>
+      <aside class="card" aria-label="Vertrauen & Nutzen">
+        <div class="features">
+          <div class="feature">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            <h3>Standardisiert & nachvollziehbar</h3>
+            <p>27 Anforderungen / 6 Themenfelder – klare Bewertung statt Bauchgefühl.</p>
+          </div>
+          <div class="feature">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v8m-4-4h8"/></svg>
+            <h3>Konkreter Output</h3>
+            <p>Ihr <strong>Top‑10‑Maßnahmenplan</strong> mit Aufwand/Nutzen & Verantwortlichkeiten.</p>
+          </div>
+          <div class="feature">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 16h-1v-4h-1m1-4h.01"/></svg>
+            <h3>Ohne Zertifizierungs‑Blabla</h3>
+            <p>Pragmatisch, verständlich, vor Ort – Fokus auf Wirkung, nicht Papier.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-  <!-- Main Content -->
-  <div class="container mt-4">
-    <section id="kaspersky">
-      <h3>Endpoint Security for Business</h3>
-      <p>
-        Endpoint Security bietet umfassenden Schutz vor vielfältigen Bedrohungen wie Viren, Malware, Ransomware und mehr. Es schützt sowohl einzelne Endgeräte als auch das gesamte Netzwerk vor Cyberangriffen und sorgt für eine sichere Arbeitsumgebung.
-      </p>
-    </section>
+  <!-- ANGEBOT -->
+  <section id="angebot">
+    <div class="container two-col">
+      <div>
+        <p class="kicker">Was Sie bekommen</p>
+        <h2>Ihr Vor‑Ort‑Check, der Entscheidungen möglich macht.</h2>
+        <ul class="list">
+          <li><span class="check">✅</span><span><strong>Strukturiertes Interview (1–2 h)</strong> auf Basis DIN SPEC 27076</span></li>
+          <li><span class="check">✅</span><span><strong>Reifegrad</strong> in 6 Themenfeldern & <strong>Top‑10‑Maßnahmen</strong></span></li>
+          <li><span class="check">✅</span><span><strong>Abschlussgespräch</strong> zur Priorisierung & Roadmap</span></li>
+          <li><span class="check">✅</span><span><strong>Optional:</strong> Quick‑Wins (MFA, Backup, Patch‑Routine, E‑Mail‑Sicherheit), <strong>Notfallhandbuch</strong> & <strong>Awareness‑Live‑Session</strong></span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="kicker">Für wen passt das?</p>
+        <h2>KMU & Kleinstbetriebe (ca. 5–50 MA) in Zwickau & Umland</h2>
+        <p style="color:var(--muted)">z. B. Automotive‑Zulieferer, Metall/Elektro, Maschinenbau, Bau/Handwerk, Logistik, Agenturen/IT‑Dienstleister, Arztpraxen/soziale Träger, Handel.</p>
+        <div class="badge-row">
+          <span class="pill">Vor Ort</span>
+          <span class="pill">Regional</span>
+          <span class="pill">Keine Remote‑Checks</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <hr>
+  <!-- ABLAUF -->
+  <section id="ablauf">
+    <div class="container card">
+      <p class="kicker">So läuft’s ab</p>
+      <h2>In vier Schritten zum klaren Maßnahmenplan</h2>
+      <div class="two-col">
+        <ol class="list" style="counter-reset: step; gap:14px;">
+          <li><span class="check">1️⃣</span><span><strong>Kurzgespräch (20 Min)</strong> – Ziele & Rahmen klären</span></li>
+          <li><span class="check">2️⃣</span><span><strong>Vor‑Ort‑Interview (1–2 h)</strong> – kompakt, verständlich, ohne IT‑Jargon</span></li>
+          <li><span class="check">3️⃣</span><span><strong>Bericht</strong> – Reifegrad + Top‑10‑Maßnahmen <em>(innerhalb von 5 AT)</em></span></li>
+          <li><span class="check">4️⃣</span><span><strong>Umsetzung (optional)</strong> – Quick‑Wins in 1 Tag, Notfallhandbuch, Awareness‑Live‑Session</span></li>
+        </ol>
+        <div class="card">
+          <h3 style="margin-top:0">Warum gerade dieser Check?</h3>
+          <p style="color:var(--muted)">DIN‑basiert & nachvollziehbar · Umsetzbar statt theoretisch · Schnell wirksam · Regional & persönlich</p>
+          <a class="btn" href="#kontakt">Kurzgespräch buchen</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="vulnerability">
-      <h3>Vulnerability Scans</h3>
-      <p>
-        Vulnerability Scans sind eine wichtige Maßnahme, um potenzielle Schwachstellen in Ihrem IT-System zu erkennen. Durch regelmäßige Scans können Sicherheitslücken identifiziert und behoben werden, um die Angriffsfläche für Hacker zu reduzieren und Ihre Daten zu schützen.
-      </p>
-    </section>
+  <!-- PREIS -->
+  <section id="preis">
+    <div class="container price">
+      <div class="card">
+        <p class="kicker">Preis & Optionen</p>
+        <h2>Fixpreis, klare Abgrenzung.</h2>
+        <p class="tag">1.000 €</p>
+        <p style="margin-top:-6px; color:var(--muted)">Cyber‑Risikocheck (DIN SPEC 27076) – <strong>vor Ort</strong> im Landkreis Zwickau & nahes Umland</p>
+        <ul class="list">
+          <li><span class="check">✔</span><span>1–2 h Interview · Bericht mit Top‑10‑Maßnahmen · Abschlussgespräch</span></li>
+          <li><span class="check">✔</span><span>Lieferbar innerhalb von 14 Tagen (nach Verfügbarkeit)</span></li>
+          <li><span class="check">✖</span><span><strong>Keine</strong> Remote‑Checks · <strong>Keine</strong> Zertifizierung/ISO</span></li>
+        </ul>
+        <div style="margin-top:14px; display:flex; gap:.6rem; flex-wrap:wrap;">
+          <a class="btn" href="#kontakt">Termin sichern</a>
+          <a class="btn secondary" href="#faq">Fragen klären</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Optionale Leistungen</h3>
+        <ul class="list">
+          <li><span class="check">➕</span><span><strong>Quick‑Wins</strong> (MFA, Backup, Patch‑Routine, E‑Mail‑Sicherheit) – <em>ab 800 € / Tag</em></span></li>
+          <li><span class="check">➕</span><span><strong>Notfallhandbuch</strong> – kompakt & praxistauglich</span></li>
+          <li><span class="check">➕</span><span><strong>Awareness‑Live‑Session (90 Min)</strong> – verständlich & interaktiv</span></li>
+        </ul>
+        <p style="color:var(--muted)">Technische Umsetzung gern mit Ihrem Systemhaus oder bewährten Partnern.</p>
+      </div>
+    </div>
+  </section>
 
-    <hr>
-
-    <section id="patch">
-      <h3>Patch Management</h3>
-      <p>
-        Patch-Management für die Sicherheit in Unternehmen spielt eine entscheidende Rolle. Veraltete oder nicht aktualisierte Software stellt sofort ein Einfallstor für Hacker und Malware dar. Mit unserem professionellen Patch-Management-Service erhalten Sie regelmäßig aktuelle Sicherheitsupdates, die Sie effizient und kostengünstig vor Risiken schützen.
-      </p>
-      <p>
-        Unser Team bei ITSec-Bock analysiert alle verwalteten Systeme - unabhängig vom Betriebssystem und Produkt - gründlich auf Schwachstellen. Dabei halten wir Ihre Systeme stets auf dem neuesten Stand, was Sicherheitsupdates betrifft. Durch ein geregeltes und regelmäßiges Patch-Management tragen wir grundlegend zum Schutz Ihrer gesamten IT-Infrastruktur bei. Sie können sich darauf verlassen, dass Ihre Systeme immer auf dem aktuellen Stand der Sicherheitstechnologie sind.
-      </p>
-    </section>
-
-    <hr>
-
-    <section id="hardening">
-      <h3>Windows Hardening</h3>
-      <p>
-        Windows Hardening bezeichnet das gezielte Absichern von Windows-Betriebssystemen, um unbefugte Zugriffe und unautorisierte Manipulationen zu verhindern. Durch die Anwendung von Best Practices und Sicherheitsrichtlinien wird die Sicherheit Ihrer Windows-Umgebung verbessert.
-      </p>
-    </section>
-
-    <hr>
-
-    <section id="office365">
-      <h3>Security for Microsoft Office 365</h3>
-      <p>
-        Security for Microsoft Office 365 erweitert den Schutz Ihrer Office 365 Umgebung. Es bietet zusätzliche Sicherheitsebenen gegen Bedrohungen in E-Mails, Anhängen und Links, um Ihre Geschäftskommunikation vor Malware und Phishing-Angriffen zu schützen.
-      </p>
-    </section>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
+  <!-- FAQ -->
+  <section id="faq">
     <div class="container">
-      <p>&copy; 2023 ITSec-Bock Dienstleistungen. All rights reserved. | <a href="impressum.html">Impressum</a></p>
+      <p class="kicker">Häufige Fragen</p>
+      <h2>Kurz & ehrlich beantwortet</h2>
+      <details class="faq"><summary>Ist das eine Zertifizierung?</summary><p>Nein. Es ist ein <strong>standardisiertes Assessment</strong> mit Maßnahmenplan – ideal als Einstieg oder zur Vorbereitung auf Kunden‑/Versicherer‑/Audit‑Fragen.</p></details>
+      <details class="faq"><summary>Bieten Sie Remote‑Checks an?</summary><p>Nein. <strong>Vor Ort</strong> – für Qualität, Kontext und Vertrauen.</p></details>
+      <details class="faq"><summary>Sind wir von NIS‑2 betroffen?</summary><p>Kommt auf <strong>Größe & Branche</strong> an. Im Check klären wir die <strong>Relevanz</strong> und priorisieren passende Maßnahmen (ohne Rechtsberatung).</p></details>
+      <details class="faq"><summary>Wie schnell bekomme ich Ergebnisse?</summary><p>Den Bericht mit <strong>Top‑10‑Maßnahmen</strong> erhalten Sie <strong>innerhalb von 5 Arbeitstagen</strong>.</p></details>
+      <details class="faq"><summary>Wer setzt die Technik um?</summary><p>Entweder wir übernehmen Quick‑Wins oder arbeiten mit Ihrem <strong>Systemhaus</strong> zusammen.</p></details>
+    </div>
+  </section>
+
+  <!-- ÜBER MICH / KONTAKT -->
+  <section id="kontakt">
+    <div class="container two-col">
+      <div class="card">
+        <p class="kicker">Über mich</p>
+        <h2>Eric Bock · Puls Security</h2>
+        <p>Ich helfe regionalen KMU mit einem kompakten, verständlichen Sicherheits‑Check – <strong>ohne IT‑Groschenroman</strong> und mit Fokus auf <strong>sofort wirksame Schritte</strong>.</p>
+        <p class="kicker">Region</p>
+        <p>Landkreis Zwickau & Umland</p>
+      </div>
+      <div class="card">
+        <p class="kicker">Termin</p>
+        <h2>Kurzgespräch (20 Min) sichern</h2>
+        <p>Schicken Sie mir kurz Ihr Wunschzeitfenster – ich melde mich mit einem Vorschlag.</p>
+        <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:10px;">
+          <a class="btn" href="mailto:eric.bock@puls-security.de?subject=Kurzgespr%C3%A4ch%20Cyber‑Risikocheck&body=Hallo%20Herr%20Bock%2C%0A%0Awir%20m%C3%B6chten%20ein%2020‑Minuten‑Kurzgespr%C3%A4ch%20vereinbaren.%20Terminvorschl%C3%A4ge%3A%20...%0A%0ABetrieb%3A%20%0AName%3A%20%0ATelefon%3A%20%0A%0AVielen%20Dank!">E‑Mail senden</a>
+          <a class="btn secondary" href="tel:+49">Anrufen</a>
+        </div>
+        <p style="color:var(--muted); font-size:.92rem; margin-top:8px;">Oder nutzen Sie Ihr eigenes Formular/Tool – ich richte mich nach Ihnen.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="container">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+      <div>© <span id="y"></span> Eric Bock · Puls Security</div>
+      <div style="display:flex; gap:16px;">
+        <a href="#" title="Impressum">Impressum</a>
+        <a href="#" title="Datenschutz">Datenschutz</a>
+        <span class="pill">Kein Remote‑Check</span>
+      </div>
     </div>
   </footer>
 
-  <!-- Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Jahr im Footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Kleines UX‑Detail: Header Links nicht unterstreichen beim Klick‑Scroll
+    document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',()=>a.blur()));
+  </script>
 </body>
 </html>
