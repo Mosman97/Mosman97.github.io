@@ -19,7 +19,7 @@
     }
     @media (prefers-color-scheme: light) {
       :root { --bg:#ffffff; --card:#f8fafc; --text:#0b1020; --muted:#5b6878; --ring: rgba(37,99,235,.25);}  
-      header.nav { background: rgba(255,255,255,.7); backdrop-filter: blur(10px); }
+      header.nav { background: #ffffff; backdrop-filter: none; }
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -32,7 +32,7 @@
     .btn.secondary { background: transparent; color: var(--text); border:1px solid rgba(148,163,184,.35); box-shadow:none; }
     .pill { display:inline-flex; gap:.5rem; align-items:center; padding:.35rem .7rem; border-radius:999px; background: rgba(148,163,184,.15); color: var(--muted); font-weight:600; font-size:.85rem; }
 
-    header.nav { position:sticky; top:0; z-index:50; border-bottom:1px solid rgba(148,163,184,.15); background: rgba(15,23,42,.7); backdrop-filter: blur(10px); }
+    header.nav { position:sticky; top:0; z-index:50; border-bottom:1px solid rgba(148,163,184,.15); background: var(--card); backdrop-filter: none; }
     header .inner { display:flex; align-items:center; justify-content:space-between; min-height:64px; }
     header nav a { margin-left:1rem; font-weight:600; color:var(--text); opacity:.85; }
     header nav a:hover { opacity:1; }
@@ -81,7 +81,7 @@
   {
     "@context":"https://schema.org",
     "@type":"ProfessionalService",
-    "name":"Puls Security – Cyber‑Risikocheck (DIN 27076)",
+    "name":"Eric Bock – Cyber‑Risikocheck (DIN 27076)",
     "areaServed":"Landkreis Zwickau & Umland",
     "address": {"@type":"PostalAddress", "addressLocality":"Zwickau", "addressCountry":"DE"},
     "email":"eric.bock@puls-security.de",
@@ -90,22 +90,18 @@
   }
   </script>
 </head>
-<body>
-  <a href="#kontakt" class="pill" style="position:fixed; right:14px; bottom:14px; z-index:60; box-shadow:0 10px 25px rgba(0,0,0,.25)">Jetzt Kurzgespräch buchen</a>
-
-  <!-- NAV -->
+<body><!-- NAV -->
   <header class="nav" aria-label="Hauptnavigation">
     <div class="container inner">
       <div style="display:flex; align-items:center; gap:.7rem;">
         <div class="pill" aria-hidden="true">DIN SPEC 27076</div>
-        <strong>Puls Security</strong>
+        <strong>Eric Bock</strong>
       </div>
       <nav>
         <a href="#angebot">Angebot</a>
         <a href="#ablauf">Ablauf</a>
         <a href="#preis">Preis</a>
         <a href="#faq">FAQ</a>
-        <a href="#kontakt" class="btn" style="margin-left:1rem;">Termin sichern</a>
       </nav>
     </div>
   </header>
@@ -193,7 +189,6 @@
         <div class="card">
           <h3 style="margin-top:0">Warum gerade dieser Check?</h3>
           <p style="color:var(--muted)">DIN‑basiert & nachvollziehbar · Umsetzbar statt theoretisch · Schnell wirksam · Regional & persönlich</p>
-          <a class="btn" href="#kontakt">Kurzgespräch buchen</a>
         </div>
       </div>
     </div>
@@ -247,7 +242,7 @@
     <div class="container two-col">
       <div class="card">
         <p class="kicker">Über mich</p>
-        <h2>Eric Bock · Puls Security</h2>
+        <h2>Eric Bock</h2>
         <p>Ich helfe regionalen KMU mit einem kompakten, verständlichen Sicherheits‑Check – <strong>ohne IT‑Groschenroman</strong> und mit Fokus auf <strong>sofort wirksame Schritte</strong>.</p>
         <p class="kicker">Region</p>
         <p>Landkreis Zwickau & Umland</p>
@@ -267,7 +262,7 @@
 
   <footer class="container">
     <div style="display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
-      <div>© <span id="y"></span> Eric Bock · Puls Security</div>
+      <div>© <span id="y"></span> Eric Bock</div>
       <div style="display:flex; gap:16px;">
         <a href="#" title="Impressum">Impressum</a>
         <a href="#" title="Datenschutz">Datenschutz</a>
